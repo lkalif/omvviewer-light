@@ -246,7 +246,7 @@ public partial class MainWindow: Gtk.Window
         MainClass.client.Self.AlertMessage -= new EventHandler<AlertMessageEventArgs>(Self_AlertMessage);
         MainClass.client.Self.ScriptQuestion -= new EventHandler<ScriptQuestionEventArgs>(Self_ScriptQuestion);
         MainClass.client.Self.ScriptDialog -= new EventHandler<ScriptDialogEventArgs>(Self_ScriptDialog);
-        MainClass.client.Self.GroupChatLeft -= new EventHandler<GroupChatLeftEventArgs>(Self_GroupChatLeft);
+        //MainClass.client.Self.GroupChatLeft -= new EventHandler<GroupChatLeftEventArgs>(Self_GroupChatLeft);
         MainClass.client.Friends.FriendshipResponse -= new EventHandler<FriendshipResponseEventArgs>(Friends_FriendshipResponse);
         MainClass.client.Friends.FriendshipTerminated -= new EventHandler<FriendshipTerminatedEventArgs>(Friends_FriendshipTerminated);
         MainClass.client.Parcels.ParcelDwellReply -= new EventHandler<ParcelDwellReplyEventArgs>(Parcels_ParcelDwellReply);
@@ -277,7 +277,7 @@ public partial class MainWindow: Gtk.Window
         MainClass.client.Self.AlertMessage += new EventHandler<AlertMessageEventArgs>(Self_AlertMessage);
         MainClass.client.Self.ScriptQuestion += new EventHandler<ScriptQuestionEventArgs>(Self_ScriptQuestion);
         MainClass.client.Self.ScriptDialog += new EventHandler<ScriptDialogEventArgs>(Self_ScriptDialog);
-        MainClass.client.Self.GroupChatLeft += new EventHandler<GroupChatLeftEventArgs>(Self_GroupChatLeft);
+        //MainClass.client.Self.GroupChatLeft += new EventHandler<GroupChatLeftEventArgs>(Self_GroupChatLeft);
         MainClass.client.Friends.FriendshipResponse += new EventHandler<FriendshipResponseEventArgs>(Friends_FriendshipResponse);
         MainClass.client.Friends.FriendshipTerminated += new EventHandler<FriendshipTerminatedEventArgs>(Friends_FriendshipTerminated);
         MainClass.client.Parcels.ParcelDwellReply += new EventHandler<ParcelDwellReplyEventArgs>(Parcels_ParcelDwellReply);
@@ -492,13 +492,14 @@ public partial class MainWindow: Gtk.Window
 
 
 
-
+    /*
     void Self_GroupChatLeft(object sender, GroupChatLeftEventArgs e)
   	{
 		Console.Write("Left group chat for session "+e.SessionID.ToString()+"\n");
 		if(MainClass.win.active_ims.Contains(e.SessionID))
 		   MainClass.win.active_ims.Remove(e.SessionID);
 	}
+    */
 
     void Self_ScriptDialog(object sender, ScriptDialogEventArgs e)
 	{
@@ -1029,11 +1030,11 @@ public partial class MainWindow: Gtk.Window
                 {
 					if(args.ResponseId==ResponseType.Yes)
 					{
-						MainClass.client.Self.TeleportLureRespond(e.IM.FromAgentID,true);
+						MainClass.client.Self.TeleportLureRespond(e.IM.FromAgentID, e.IM.IMSessionID, true);
 					}
 					else
 					{
-						MainClass.client.Self.TeleportLureRespond(e.IM.FromAgentID,false);
+                        MainClass.client.Self.TeleportLureRespond(e.IM.FromAgentID, e.IM.IMSessionID, false);
 					}
 					md.Destroy();
 			     };

@@ -405,14 +405,16 @@ namespace omvviewerlight
 
 			if(asset_type==AssetType.Notecard)
 			{
-                OpenMetaverse.Assets.AssetNotecard nd = new OpenMetaverse.Assets.AssetNotecard(this.textview_notecard.Buffer.Text);
+                OpenMetaverse.Assets.AssetNotecard nd = new OpenMetaverse.Assets.AssetNotecard();
+                nd.BodyText = this.textview_notecard.Buffer.Text;
 				nd.Encode();	
 				MainClass.client.Inventory.RequestUploadNotecardAsset(nd.AssetData,this.target_id,new InventoryManager.InventoryUploadedAssetCallback(OnNoteUpdated));
 			}
 			
 			if(asset_type==AssetType.LSLText)
 			{
-                OpenMetaverse.Assets.AssetScriptText nd = new OpenMetaverse.Assets.AssetScriptText(this.textview_notecard.Buffer.Text);
+                OpenMetaverse.Assets.AssetScriptText nd = new OpenMetaverse.Assets.AssetScriptText();
+                nd.Source = this.textview_notecard.Buffer.Text;
 				nd.Encode();
                 MainClass.client.Inventory.RequestUploadNotecardAsset(nd.AssetData, this.target_id, new InventoryManager.InventoryUploadedAssetCallback(OnNoteUpdated));				
 			}

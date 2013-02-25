@@ -68,8 +68,7 @@ namespace omvviewerlight
 
             MainClass.onDeregister += new MainClass.deregister(MainClass_onDeregister);
 
-            MainClass.client.Assets.OnImageRecieveProgress += new AssetManager.ImageReceiveProgressCallback(onProgress);
-                
+              
 			scale=auto;
 			
 			target_asset=asset;
@@ -108,10 +107,6 @@ namespace omvviewerlight
 		
 		public void abort()
 	   {
-           if (MainClass.client != null)
-           {
-               MainClass.client.Assets.OnImageRecieveProgress -= new OpenMetaverse.AssetManager.ImageReceiveProgressCallback(onProgress);
-           }
             
            MainClass.onDeregister -= new MainClass.deregister(MainClass_onDeregister);
 
@@ -190,7 +185,6 @@ namespace omvviewerlight
             if (this_asset.AssetID != target_asset)
                 return;
 
-            MainClass.client.Assets.OnImageRecieveProgress -= new OpenMetaverse.AssetManager.ImageReceiveProgressCallback(onProgress);
             MainClass.onDeregister -= new MainClass.deregister(MainClass_onDeregister);
 
             Logger.Log("Downloaded asset " + this_asset.AssetID.ToString() + "\n",Helpers.LogLevel.Debug);
