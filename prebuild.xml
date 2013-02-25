@@ -137,7 +137,7 @@
 
     <!-- Main App -->
 
-    <Project name="omvviewer-light" path="omvviewer-light" type="WinExe" rootNamespace="omvviewerlight" icon="omvviewer.ico" frameworkVersion="v4_0" filterGroups="core">
+    <Project name="omvviewer-light" path="omvviewer-light" type="WinExe" rootNamespace="omvviewerlight" icon="omvviewer.ico" frameworkVersion="v3_5" filterGroups="core">
       <Configuration name="Debug">
         <Options>
           <OutputPath>bin/</OutputPath>
