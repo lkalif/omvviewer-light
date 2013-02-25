@@ -13,6 +13,9 @@ omvviewer-light/bin/zlib.net.dll
 *.user
 *.bak
 *~
+*.sln
+*.suo
+*.csproj*
 
 app.publish/
 vs2CE.tmp

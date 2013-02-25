@@ -111,7 +111,6 @@
       <Reference name="zlib.net" localCopy="true"/>
       <Files>
         <Match pattern="*.cs" recurse="true"/>
-        <Match path="../bin/openmetaverse_data" pattern="*.*" recurse="true" buildAction="Content" copyToOutput="PreserveNewest" />
       </Files>
     </Project>
 
