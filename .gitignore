@@ -9,6 +9,8 @@ omvviewer-light/bin/OpenMetaverseTypes.dll
 omvviewer-light/bin/XMLRPC.dll
 omvviewer-light/bin/omvviewerlight.exe
 omvviewer-light/bin/zlib.net.dll
+omvviewer-light/bin/omvviewer-light.exe
+omvviewer-light/bin/openmetaverse_data/
 .svn
 *.user
 *.bak
