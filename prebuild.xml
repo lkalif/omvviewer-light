@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Prebuild xmlns="http://dnpb.sourceforge.net/schemas/prebuild-1.7.xsd" version="1.7">
-  <Solution name="omvviewer-light" activeConfig="Debug" version="0.6.0">
+<Prebuild xmlns="prebuild-1.7.xsd" version="1.7">
+  <Solution name="omvviewer-light" activeConfig="Debug" version="0.6">
     <Configuration name="Debug">
       <Options>
         <CompilerDefines>TRACE;DEBUG</CompilerDefines>
         <OptimizeCode>false</OptimizeCode>
         <CheckUnderflowOverflow>false</CheckUnderflowOverflow>
         <AllowUnsafe>true</AllowUnsafe>
-        <WarningLevel>4</WarningLevel>
+        <WarningLevel>3</WarningLevel>
         <WarningsAsErrors>false</WarningsAsErrors>
-        <SuppressWarnings>1591,1574,0419,0618</SuppressWarnings>
-        <OutputPath>omvviewer-light/bin</OutputPath>
+        <SuppressWarnings>1591,1574,0419,0618,0414,0169</SuppressWarnings>
+        <OutputPath>bin</OutputPath>
         <DebugInformation>true</DebugInformation>
         <IncrementalBuild>true</IncrementalBuild>
         <NoStdLib>false</NoStdLib>
+        <PlatformTarget>x86</PlatformTarget>
       </Options>
     </Configuration>
     <Configuration name="Release">
@@ -22,45 +23,170 @@
         <OptimizeCode>true</OptimizeCode>
         <CheckUnderflowOverflow>false</CheckUnderflowOverflow>
         <AllowUnsafe>true</AllowUnsafe>
-        <WarningLevel>4</WarningLevel>
+        <WarningLevel>3</WarningLevel>
         <WarningsAsErrors>false</WarningsAsErrors>
-        <SuppressWarnings>1591,1574,0419,0618</SuppressWarnings>
-        <OutputPath>omvviewer-light/bin</OutputPath>
+        <SuppressWarnings>1591,1574,0419,0618,0414,0169</SuppressWarnings>
+        <OutputPath>bin</OutputPath>
         <DebugInformation>false</DebugInformation>
         <IncrementalBuild>true</IncrementalBuild>
         <NoStdLib>false</NoStdLib>
+        <PlatformTarget>x86</PlatformTarget>
       </Options>
     </Configuration>
 
-    <!-- Programs -->
+    <!-- Libraries -->
 
-    <Project name="omvviewer-light" path="omvviewer-light/" type="WinExe">
+    <Project name="OpenMetaverseTypes" path="../libopenmetaverse/OpenMetaverseTypes" type="Library" rootNamespace="OpenMetaverse" frameworkVersion="v3_5" filterGroups="libomv|core" >
       <Configuration name="Debug">
         <Options>
-          <OutputPath>omvviewer-light/bin/</OutputPath>
+          <OutputPath>../../omvviewer-light/omvviewer-light/bin/</OutputPath>
+          <PlatformTarget>x86</PlatformTarget>
         </Options>
       </Configuration>
       <Configuration name="Release">
         <Options>
-          <OutputPath>omvviewer-light/bin/</OutputPath>
+          <OutputPath>../../omvviewer-light/omvviewer-light/bin/</OutputPath>
+          <PlatformTarget>x86</PlatformTarget>
         </Options>
       </Configuration>
 
-
-      <ReferencePath>omvviewer-light/bin/</ReferencePath>
+      <ReferencePath>../../omvviewer-light/omvviewer-light/bin/</ReferencePath>
       <Reference name="System"/>
-      <Reference name="System.Configuration"/>
-      <Reference name="System.Drawing"/>
-      <Reference name="Mono.Posix"/>
-      <Reference name="OpenMetaverse"/>
-      <Reference name="OpenMetaverseTypes"/>
-      <Reference name="log4net"/>
-
+      <Reference name="System.Core"/>
+      <Reference name="System.Xml"/>
       <Files>
-        <Match pattern="*.cs" recurse="true">
-	</Match>
-       </Files>
+        <Match pattern="*.cs" recurse="true"/>
+      </Files>
     </Project>
 
+    <Project name="OpenMetaverse.StructuredData" path="../libopenmetaverse/OpenMetaverse.StructuredData" type="Library" rootNamespace="OpenMetaverse.StructuredData" frameworkVersion="v3_5" filterGroups="libomv|core">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../../omvviewer-light/omvviewer-light/bin/</OutputPath>
+          <PlatformTarget>x86</PlatformTarget>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../../omvviewer-light/omvviewer-light/bin/</OutputPath>
+          <XmlDocFile>OpenMetaverse.StructuredData.XML</XmlDocFile>
+          <PlatformTarget>x86</PlatformTarget>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>../../omvviewer-light/omvviewer-light/bin/</ReferencePath>
+      <Reference name="System"/>
+      <Reference name="System.Xml"/>
+      <Reference name="OpenMetaverseTypes"/>
+      <Files>
+        <Match pattern="*.cs" recurse="true"/>
+      </Files>
+    </Project>
+
+    <Project name="OpenMetaverse" path="../libopenmetaverse/OpenMetaverse" type="Library" rootNamespace="OpenMetaverse" frameworkVersion="v3_5" filterGroups="libomv|core">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../../omvviewer-light/omvviewer-light/bin/</OutputPath>
+          <PlatformTarget>x86</PlatformTarget>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../../omvviewer-light/omvviewer-light/bin/</OutputPath>
+          <XmlDocFile>OpenMetaverse.XML</XmlDocFile>
+          <PlatformTarget>x86</PlatformTarget>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>../../libopenmetaverse/bin/</ReferencePath>
+      <Reference name="System"/>
+      <Reference name="System.Core"/>
+      <Reference name="System.Xml"/>
+      <Reference name="System.Data"/>
+      <Reference name="System.Drawing"/>
+      <Reference name="log4net" localCopy="true"/>
+      <Reference name="OpenMetaverseTypes"/>
+      <Reference name="OpenMetaverse.StructuredData"/>
+      <Reference name="XMLRPC" localCopy="true"/>
+      <Reference name="zlib.net" localCopy="true"/>
+      <Files>
+        <Match pattern="*.cs" recurse="true"/>
+        <Match path="../bin/openmetaverse_data" pattern="*.*" recurse="true" buildAction="Content" copyToOutput="PreserveNewest" />
+      </Files>
+    </Project>
+
+    <Project name="openmetaverse_data" path="../libopenmetaverse/bin" type="Library" rootNamespace="OpenMetaverse" frameworkVersion="v3_5" filterGroups="libomv|core">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../../omvviewer-light/omvviewer-light/bin/</OutputPath>
+          <PlatformTarget>x86</PlatformTarget>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../../omvviewer-light/omvviewer-light/bin/</OutputPath>
+          <XmlDocFile>OpenMetaverse.XML</XmlDocFile>
+          <PlatformTarget>x86</PlatformTarget>
+        </Options>
+      </Configuration>
+
+      <Reference name="System"/>
+      <Files>
+        <Match path="openmetaverse_data" pattern="*.*" recurse="true" buildAction="Content" copyToOutput="PreserveNewest" />
+      </Files>
+    </Project>
+
+    <!-- Main App -->
+
+    <Project name="omvviewer-light" path="omvviewer-light" type="WinExe" rootNamespace="omvviewerlight" icon="omvviewer.ico" frameworkVersion="v4_0" filterGroups="core">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>bin/</OutputPath>
+          <PlatformTarget>x86</PlatformTarget>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <SuppressWarnings>1591,1574,0419,0618,0414,0169</SuppressWarnings>
+          <OutputPath>bin/</OutputPath>
+          <PlatformTarget>x86</PlatformTarget>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>bin/</ReferencePath>
+
+      <Reference name="System" localCopy="false" />
+      <Reference name="System.Configuration" localCopy="false" />
+      <Reference name="System.Data" localCopy="false"/>
+      <Reference name="System.Drawing" localCopy="false"/>
+      <Reference name="System.Windows.Forms" localCopy="false" />
+      <Reference name="System.Xml" localCopy="false" />
+
+      <Reference name="OpenMetaverse" localCopy="false"/>
+      <Reference name="OpenMetaverseTypes" localCopy="false"/>
+      <Reference name="OpenMetaverse.StructuredData" localCopy="false"/>
+
+      <Reference name="atk-sharp" localCopy="false" />
+      <Reference name="gdk-sharp" localCopy="false" />
+      <Reference name="glib-sharp" localCopy="false" />
+      <Reference name="gtk-sharp" localCopy="false" />
+      <Reference name="pango-sharp" localCopy="false" />
+      <Reference name="Mono.Posix" path="bin" localCopy="false" />
+
+      <Files>
+        <Match path="." pattern="*.cs" recurse="true" subType="Code">
+          <Exclude name="TexturePipeline.cs"/>
+          <Exclude name="OpenGL.cs"/>
+          <Exclude name="LogoutMsg.cs"/>
+        </Match>
+        <Match path="Properties" pattern="*.cs"  recurse="true"  subType="Form"/>
+        <Match pattern="*.resx" buildAction="EmbeddedResource" recurse="true"/>
+        <Match path="art" pattern="*" buildAction="EmbeddedResource" recurse="true"/>
+        <Match path="." pattern="*.config" recurse="false" buildAction="Content" copyToOutput="PreserveNewest"/>
+        <Match path="." pattern="*.html" recurse="false" buildAction="Content" copyToOutput="PreserveNewest"/>
+        <Match path="." pattern="*.xml" recurse="false" buildAction="Content" copyToOutput="PreserveNewest"/>
+        <Match path="." pattern="*.txt" recurse="false" buildAction="Content" copyToOutput="PreserveNewest"/>
+      </Files>
+    </Project>
   </Solution>
 </Prebuild>
