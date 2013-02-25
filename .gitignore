@@ -3,13 +3,17 @@
 omvviewer-light/obj
 omvviewer-light/obj/*
 omvviewer-light/obj/*/*
-libomv/OpenMetaverseTypes/obj/*
-libomv/*/obj/*
+omvviewer-light/bin/OpenMetaverse.StructuredData.dll
+omvviewer-light/bin/OpenMetaverse.dll
+omvviewer-light/bin/OpenMetaverseTypes.dll
+omvviewer-light/bin/XMLRPC.dll
+omvviewer-light/bin/omvviewerlight.exe
+omvviewer-light/bin/zlib.net.dll
 .svn
+*.user
+*.bak
+*~
 
-libomv/bin/OpenMetaverse.Http.dll
-libomv/bin/OpenMetaverse.StructuredData.dll
-libomv/bin/OpenMetaverse.dll
 app.publish/
 vs2CE.tmp
 publish/
