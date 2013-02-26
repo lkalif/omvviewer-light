@@ -39,18 +39,18 @@
     <Project name="OpenMetaverseTypes" path="libopenmetaverse/OpenMetaverseTypes" type="Library" rootNamespace="OpenMetaverse" frameworkVersion="v3_5" filterGroups="libomv|core" >
       <Configuration name="Debug">
         <Options>
-          <OutputPath>../omvviewer-light/bin/</OutputPath>
+          <OutputPath>../bin/</OutputPath>
           <PlatformTarget>x86</PlatformTarget>
         </Options>
       </Configuration>
       <Configuration name="Release">
         <Options>
-          <OutputPath>../omvviewer-light/bin/</OutputPath>
+          <OutputPath>../bin/</OutputPath>
           <PlatformTarget>x86</PlatformTarget>
         </Options>
       </Configuration>
 
-      <ReferencePath>../../omvviewer-light/bin/</ReferencePath>
+      <ReferencePath>../../bin/</ReferencePath>
       <Reference name="System"/>
       <Reference name="System.Core"/>
       <Reference name="System.Xml"/>
@@ -62,18 +62,18 @@
     <Project name="OpenMetaverse.StructuredData" path="libopenmetaverse/OpenMetaverse.StructuredData" type="Library" rootNamespace="OpenMetaverse.StructuredData" frameworkVersion="v3_5" filterGroups="libomv|core">
       <Configuration name="Debug">
         <Options>
-          <OutputPath>../omvviewer-light/bin/</OutputPath>
+          <OutputPath>../bin/</OutputPath>
           <PlatformTarget>x86</PlatformTarget>
         </Options>
       </Configuration>
       <Configuration name="Release">
         <Options>
-          <OutputPath>../omvviewer-light/bin/</OutputPath>
+          <OutputPath>../bin/</OutputPath>
           <PlatformTarget>x86</PlatformTarget>
         </Options>
       </Configuration>
 
-      <ReferencePath>../../omvviewer-light/bin/</ReferencePath>
+      <ReferencePath>../../bin/</ReferencePath>
       <Reference name="System"/>
       <Reference name="System.Xml"/>
       <Reference name="OpenMetaverseTypes"/>
@@ -85,13 +85,13 @@
     <Project name="OpenMetaverse" path="libopenmetaverse/OpenMetaverse" type="Library" rootNamespace="OpenMetaverse" frameworkVersion="v3_5" filterGroups="libomv|core">
       <Configuration name="Debug">
         <Options>
-          <OutputPath>../omvviewer-light/bin/</OutputPath>
+          <OutputPath>../bin/</OutputPath>
           <PlatformTarget>x86</PlatformTarget>
         </Options>
       </Configuration>
       <Configuration name="Release">
         <Options>
-          <OutputPath>../omvviewer-light/bin/</OutputPath>
+          <OutputPath>../bin/</OutputPath>
           <PlatformTarget>x86</PlatformTarget>
         </Options>
       </Configuration>
@@ -117,19 +117,19 @@
     <Project name="omvviewer-light" path="omvviewer-light" type="WinExe" rootNamespace="omvviewerlight" icon="omvviewer.ico" frameworkVersion="v3_5" filterGroups="core">
       <Configuration name="Debug">
         <Options>
-          <OutputPath>bin/</OutputPath>
+          <OutputPath>../bin/</OutputPath>
           <PlatformTarget>x86</PlatformTarget>
         </Options>
       </Configuration>
       <Configuration name="Release">
         <Options>
           <SuppressWarnings>1591,1574,0419,0618,0414,0169</SuppressWarnings>
-          <OutputPath>bin/</OutputPath>
+          <OutputPath>../bin/</OutputPath>
           <PlatformTarget>x86</PlatformTarget>
         </Options>
       </Configuration>
 
-      <ReferencePath>bin/</ReferencePath>
+      <ReferencePath>../bin/</ReferencePath>
 
       <Reference name="System" localCopy="false" />
       <Reference name="System.Configuration" localCopy="false" />
