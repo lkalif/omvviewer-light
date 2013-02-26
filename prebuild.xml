@@ -69,7 +69,6 @@
       <Configuration name="Release">
         <Options>
           <OutputPath>../omvviewer-light/bin/</OutputPath>
-          <XmlDocFile>OpenMetaverse.StructuredData.XML</XmlDocFile>
           <PlatformTarget>x86</PlatformTarget>
         </Options>
       </Configuration>
@@ -93,7 +92,6 @@
       <Configuration name="Release">
         <Options>
           <OutputPath>../omvviewer-light/bin/</OutputPath>
-          <XmlDocFile>OpenMetaverse.XML</XmlDocFile>
           <PlatformTarget>x86</PlatformTarget>
         </Options>
       </Configuration>
