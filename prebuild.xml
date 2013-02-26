@@ -36,21 +36,21 @@
 
     <!-- Libraries -->
 
-    <Project name="OpenMetaverseTypes" path="../libopenmetaverse/OpenMetaverseTypes" type="Library" rootNamespace="OpenMetaverse" frameworkVersion="v3_5" filterGroups="libomv|core" >
+    <Project name="OpenMetaverseTypes" path="libopenmetaverse/OpenMetaverseTypes" type="Library" rootNamespace="OpenMetaverse" frameworkVersion="v3_5" filterGroups="libomv|core" >
       <Configuration name="Debug">
         <Options>
-          <OutputPath>../../omvviewer-light/omvviewer-light/bin/</OutputPath>
+          <OutputPath>../omvviewer-light/bin/</OutputPath>
           <PlatformTarget>x86</PlatformTarget>
         </Options>
       </Configuration>
       <Configuration name="Release">
         <Options>
-          <OutputPath>../../omvviewer-light/omvviewer-light/bin/</OutputPath>
+          <OutputPath>../omvviewer-light/bin/</OutputPath>
           <PlatformTarget>x86</PlatformTarget>
         </Options>
       </Configuration>
 
-      <ReferencePath>../../omvviewer-light/omvviewer-light/bin/</ReferencePath>
+      <ReferencePath>../../omvviewer-light/bin/</ReferencePath>
       <Reference name="System"/>
       <Reference name="System.Core"/>
       <Reference name="System.Xml"/>
@@ -59,22 +59,22 @@
       </Files>
     </Project>
 
-    <Project name="OpenMetaverse.StructuredData" path="../libopenmetaverse/OpenMetaverse.StructuredData" type="Library" rootNamespace="OpenMetaverse.StructuredData" frameworkVersion="v3_5" filterGroups="libomv|core">
+    <Project name="OpenMetaverse.StructuredData" path="libopenmetaverse/OpenMetaverse.StructuredData" type="Library" rootNamespace="OpenMetaverse.StructuredData" frameworkVersion="v3_5" filterGroups="libomv|core">
       <Configuration name="Debug">
         <Options>
-          <OutputPath>../../omvviewer-light/omvviewer-light/bin/</OutputPath>
+          <OutputPath>../omvviewer-light/bin/</OutputPath>
           <PlatformTarget>x86</PlatformTarget>
         </Options>
       </Configuration>
       <Configuration name="Release">
         <Options>
-          <OutputPath>../../omvviewer-light/omvviewer-light/bin/</OutputPath>
+          <OutputPath>../omvviewer-light/bin/</OutputPath>
           <XmlDocFile>OpenMetaverse.StructuredData.XML</XmlDocFile>
           <PlatformTarget>x86</PlatformTarget>
         </Options>
       </Configuration>
 
-      <ReferencePath>../../omvviewer-light/omvviewer-light/bin/</ReferencePath>
+      <ReferencePath>../../omvviewer-light/bin/</ReferencePath>
       <Reference name="System"/>
       <Reference name="System.Xml"/>
       <Reference name="OpenMetaverseTypes"/>
@@ -83,16 +83,16 @@
       </Files>
     </Project>
 
-    <Project name="OpenMetaverse" path="../libopenmetaverse/OpenMetaverse" type="Library" rootNamespace="OpenMetaverse" frameworkVersion="v3_5" filterGroups="libomv|core">
+    <Project name="OpenMetaverse" path="libopenmetaverse/OpenMetaverse" type="Library" rootNamespace="OpenMetaverse" frameworkVersion="v3_5" filterGroups="libomv|core">
       <Configuration name="Debug">
         <Options>
-          <OutputPath>../../omvviewer-light/omvviewer-light/bin/</OutputPath>
+          <OutputPath>../omvviewer-light/bin/</OutputPath>
           <PlatformTarget>x86</PlatformTarget>
         </Options>
       </Configuration>
       <Configuration name="Release">
         <Options>
-          <OutputPath>../../omvviewer-light/omvviewer-light/bin/</OutputPath>
+          <OutputPath>../omvviewer-light/bin/</OutputPath>
           <XmlDocFile>OpenMetaverse.XML</XmlDocFile>
           <PlatformTarget>x86</PlatformTarget>
         </Options>
@@ -111,27 +111,6 @@
       <Reference name="zlib.net" localCopy="true"/>
       <Files>
         <Match pattern="*.cs" recurse="true"/>
-      </Files>
-    </Project>
-
-    <Project name="openmetaverse_data" path="../libopenmetaverse/bin" type="Library" rootNamespace="OpenMetaverse" frameworkVersion="v3_5" filterGroups="libomv|core">
-      <Configuration name="Debug">
-        <Options>
-          <OutputPath>../../omvviewer-light/omvviewer-light/bin/</OutputPath>
-          <PlatformTarget>x86</PlatformTarget>
-        </Options>
-      </Configuration>
-      <Configuration name="Release">
-        <Options>
-          <OutputPath>../../omvviewer-light/omvviewer-light/bin/</OutputPath>
-          <XmlDocFile>OpenMetaverse.XML</XmlDocFile>
-          <PlatformTarget>x86</PlatformTarget>
-        </Options>
-      </Configuration>
-
-      <Reference name="System"/>
-      <Files>
-        <Match path="openmetaverse_data" pattern="*.*" recurse="true" buildAction="Content" copyToOutput="PreserveNewest" />
       </Files>
     </Project>
 
@@ -182,8 +161,6 @@
         <Match pattern="*.resx" buildAction="EmbeddedResource" recurse="true"/>
         <Match path="art" pattern="*" buildAction="EmbeddedResource" recurse="true"/>
         <Match path="." pattern="*.config" recurse="false" buildAction="Content" copyToOutput="PreserveNewest"/>
-        <Match path="." pattern="*.html" recurse="false" buildAction="Content" copyToOutput="PreserveNewest"/>
-        <Match path="." pattern="*.xml" recurse="false" buildAction="Content" copyToOutput="PreserveNewest"/>
         <Match path="." pattern="*.txt" recurse="false" buildAction="Content" copyToOutput="PreserveNewest"/>
       </Files>
     </Project>
