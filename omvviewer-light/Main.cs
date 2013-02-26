@@ -143,10 +143,13 @@ namespace omvviewerlight
 
                 try
                 {
+                    buf = Pixbuf.LoadFromResource("omvviewerlight.art." + name);
+                    /*
                     if (!monodevelop)
                         buf = Pixbuf.LoadFromResource(name);
                     else
                         buf = Pixbuf.LoadFromResource("omvviewerlight.art." + name);
+                    */
                 }
                 catch (Exception e)
                 {
