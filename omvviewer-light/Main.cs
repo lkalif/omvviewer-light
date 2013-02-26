@@ -208,7 +208,7 @@ namespace omvviewerlight
                 // get a list of resource names from the manifest
                 string[] resNames = a.GetManifestResourceNames();
 
-                string check = resNames[0];
+                string check = resNames[1];
                 if (check.Contains("omvviewerlight.art."))
                     monodevelop = true;
 
