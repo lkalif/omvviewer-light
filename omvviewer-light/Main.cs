@@ -254,20 +254,6 @@ namespace omvviewerlight
 			
 		}
 
-		public static string cleandistance(string dist,int dp)
-		{			
-			int pos=dist.IndexOf(".");
-			dp++;
-			
-			if(pos==-1)
-				return dist;
-			
-			if((pos+dp)>dist.Length)
-				return dist;
-			
-			return dist.Substring(0,pos+dp);		
-		}		
-		
 		public static string prettyvector(Vector3 vector,int dp)
 		{
 			Vector3d vec = new Vector3d(vector.X,vector.Y,vector.Z);
@@ -279,11 +265,11 @@ namespace omvviewerlight
 			string ret;
 			
 			string x,y,z;
-			x=cleandistance(vector.X.ToString(),dp);
-			y=cleandistance(vector.Y.ToString(),dp);
-			z=cleandistance(vector.Z.ToString(),dp);
+			x=vector.X.ToString("F" + dp, System.Globalization.CultureInfo.InvariantCulture);
+			y=vector.Y.ToString("F" + dp, System.Globalization.CultureInfo.InvariantCulture);
+            z=vector.Z.ToString("F" + dp, System.Globalization.CultureInfo.InvariantCulture);
 			
-			ret="<"+x+","+y+","+z+">";
+			ret="<"+x+", "+y+", "+z+">";
 			
 			return ret;
 		}

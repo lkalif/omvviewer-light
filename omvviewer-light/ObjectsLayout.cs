@@ -412,7 +412,7 @@ namespace omvviewerlight
                                     owner = this.img_group;
                                
 
-                                store.AppendValues(prim.Properties.Name, prim.Properties.Description, MainClass.cleandistance(Vector3d.Distance(AutoPilot.localtoglobalpos(prim.Position, e.Simulator.Handle), AutoPilot.localtoglobalpos(self_pos, MainClass.client.Network.CurrentSim.Handle)).ToString(),2), prim.Properties.ObjectID, e.Simulator.Handle,
+                                store.AppendValues(prim.Properties.Name, prim.Properties.Description, Vector3d.Distance(AutoPilot.localtoglobalpos(prim.Position, e.Simulator.Handle), AutoPilot.localtoglobalpos(self_pos, MainClass.client.Network.CurrentSim.Handle)).ToString("F" + 2, System.Globalization.CultureInfo.InvariantCulture), prim.Properties.ObjectID, e.Simulator.Handle,
                                     owner,
                                     (prim.Flags & PrimFlags.Money) == PrimFlags.Money ? this.img_pay : this.img_blank,
                                     (prim.Flags & PrimFlags.Touch) == PrimFlags.Touch ? this.img_touch : this.img_blank,

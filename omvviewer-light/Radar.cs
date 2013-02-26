@@ -363,7 +363,7 @@ namespace omvviewerlight
 
                                    if (av_tree.ContainsKey(kvp.Key))
                                    {
-                                       store.SetValue(av_tree[kvp.Key], 2, MainClass.cleandistance(dist.ToString(), 1));
+                                       store.SetValue(av_tree[kvp.Key], 2, dist.ToString("F" + 1, System.Globalization.CultureInfo.InvariantCulture));
                                    }
                                }
                                catch
